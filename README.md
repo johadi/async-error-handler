@@ -21,7 +21,10 @@ const getUsersByLocationAndGender = async (location, gender) => {
   
 };
 
-getUsersByLocationAndGender('wakanda', 'female'); // returns promise whose then contains all females in Wakanda
+getUsersByLocationAndGender('wakanda', 'female')
+  .then(result => {
+    // result = Females in Wakanda
+  });a
 ```
 
 For expressJS route, you would have to do something like this:
@@ -59,7 +62,11 @@ const getUsers = handleAsync(async () => {
   // ...do something with the error
 });
 
-getUsers(); // just like async, returns promise whose then contains list of users
+getUsers()
+  .then(users => {
+    // users = list of users
+  });
+
 ```
 #### With function that has parameters
 
@@ -75,7 +82,10 @@ const getUsersByLocationAndGender = handleAsync(async (location, gender) => {
   // ... do something with the err and other arguments passed to the `error callback`.
 });
 
-getUsersByLocationAndGender('wakanda', 'male'); // just like async, returns promise whose then contains males in Wakanda
+getUsersByLocationAndGender('wakanda', 'male')
+  .then(result => {
+    // result =  Males in Wakanda
+  });
 ```
 #### With expressJS
 When used in `expressJS route callback`, if exception is thrown, all arguments express does pass to route callback will also be available to the `error callback` immediately after the `err` argument.
@@ -101,7 +111,7 @@ app.get('/api/users', handleAsync(async (req, res, next) => {
 | params | description |
 | --- | --- |
 | asyncFunc | The async function to be handled |
-| errorCallback | The callback to be called when the `asyncFunc` throws an exception. Any arguments passed to the `asyncFunc` will be available to the `errorCallback` as next arguments after the `err` argument. Something like `(err, ...args)` where `...args` are arguments passed to `asyncFunc` |
+| errorCallback | The callback to be called when the `asyncFunc` throws an exception. Any arguments passed to the `asyncFunc` will be available to the `errorCallback` as next arguments after the `err` argument.<br>Something like `(err, ...args)` where `...args` are arguments passed to `asyncFunc` |
 
 ### Testing
 `npm run test`
