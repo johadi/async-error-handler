@@ -21,7 +21,7 @@ const getUsersByLocationAndGender = async (location, gender) => {
   
 };
 
-const wakandaFemales = getUsersByLocationAndGender('wakanda', 'female'); // all females in Wakanda
+getUsersByLocationAndGender('wakanda', 'female'); // returns promise whose then contains all females in Wakanda
 ```
 
 For expressJS route, you would have to do something like this:
@@ -59,7 +59,7 @@ const getUsers = handleAsync(async () => {
   // ...do something with the error
 });
 
-const users = getUsers(); // list of users
+getUsers(); // just like async, returns promise whose then contains list of users
 ```
 #### With function that has parameters
 
@@ -75,7 +75,7 @@ const getUsersByLocationAndGender = handleAsync(async (location, gender) => {
   // ... do something with the err and other arguments passed to the `error callback`.
 });
 
-const wakandaMales = getUsersByLocationAndGender('wakanda', 'male'); // males in Wakanda
+getUsersByLocationAndGender('wakanda', 'male'); // just like async, returns promise whose then contains males in Wakanda
 ```
 #### With expressJS
 When used in `expressJS route callback`, if exception is thrown, all arguments express does pass to route callback will also be available to the `error callback` immediately after the `err` argument.
