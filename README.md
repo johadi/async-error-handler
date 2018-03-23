@@ -1,4 +1,5 @@
-## Async Error Handler
+## Async Error Handler [![Build Status](https://travis-ci.org/johadi10/async-error-hanlder.svg?branch=master)](https://travis-ci.org/johadi10/async-error-hanlder)
+
 Simple function for handling errors when working with async and await. Instead of wrapping
 async functions in `try and catch` block all the time to handle possible errors,
 `async-error-handler` provides you a reusable function that conveniently handles the errors.
