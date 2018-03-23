@@ -3,3 +3,5 @@
 .DS_Store
 /*.xml
 npm-debug.log
+coverage
+.nyc_output

@@ -4,7 +4,8 @@
   "description": "Error Handler for Functions using async and await",
   "main": "index.js",
   "scripts": {
-    "test": "mocha src/tests/**/*test.js"
+    "test": "nyc --reporter=html --reporter=text mocha --require babel-register src/tests/**/*test.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -27,8 +28,12 @@
   },
   "homepage": "https://github.com/johadi10/async-error-handler#readme",
   "devDependencies": {
+    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
     "mocha": "^5.0.4",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^11.6.0",
     "sinon": "^4.4.8",
     "sinon-chai": "^3.0.0"
   }
