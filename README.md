@@ -103,7 +103,10 @@ app.get('/api/users', handleAsync(async (req, res, next) => {
 | asyncFunc | The async function to be handled |
 | errorCallback | The callback to be called when the `asyncFunc` throws an exception. Any arguments passed to the `asyncFunc` will be available to the `errorCallback` as next arguments after the `err` argument. Something like `(err, ...args)` where `...args` are arguments passed to `asyncFunc` |
 
-### Contribution
+### Testing
+`npm run test`
+
+### Contributing
 
 The project is open to contributions. Simply follow this guide:
 - Fork the repo
