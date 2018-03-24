@@ -24,7 +24,7 @@ const getUsersByLocationAndGender = async (location, gender) => {
 getUsersByLocationAndGender('wakanda', 'female')
   .then(result => {
     // result = Females in Wakanda
-  });a
+  });
 ```
 
 For expressJS route, you would have to do something like this:
