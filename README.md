@@ -3,7 +3,7 @@ Simple function for handling errors when working with async and await. Instead o
 async functions in `try and catch` block all the time to handle possible errors,
 `async-error-handler` provides you a reusable function that conveniently handles the errors.
 ### installation:
-`npm install async-error-handler`
+`npm install async-error-handler --save`
 
 ### Usage:
 Normally, you would handle errors in your async function like this:
