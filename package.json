@@ -1,6 +1,6 @@
 {
   "name": "async-error-handler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Error Handler for Functions using async and await",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/johadi10/async-error-handler.git"
+    "url": "git+https://github.com/johadi10/async-error-handler.git"
   },
   "keywords": [
     "async",
