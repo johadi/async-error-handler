@@ -151,7 +151,8 @@ class User extends Component {
 | errorCallback | The callback to be called when the `asyncFunc` throws an exception. Any arguments passed to the `asyncFunc` will be available to the `errorCallback` as next arguments after the `err` argument.<br>Something like `(err, ...args)` where `...args` are arguments passed to `asyncFunc` |
 
 ### Testing
-`npm run test`
+- `npm install`
+- `npm run test`
 
 ### Contributing
 
