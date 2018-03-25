@@ -1,4 +1,4 @@
-## Async Error Handler [![Build Status](https://travis-ci.org/johadi10/async-error-hanlder.svg?branch=master)](https://travis-ci.org/johadi10/async-error-hanlder) [![Coverage Status](https://coveralls.io/repos/github/johadi10/async-error-hanlder/badge.svg?branch=master)](https://coveralls.io/github/johadi10/async-error-hanlder?branch=master)
+## Async Error Handler [![Build Status](https://travis-ci.org/johadi10/async-error-hanlder.svg?branch=master)] [![Coverage Status](https://coveralls.io/repos/github/johadi10/async-error-handler/badge.svg?branch=master)](https://coveralls.io/github/johadi10/async-error-handler?branch=master)
 
 
 Simple function for handling errors when working with async and await. Instead of wrapping
@@ -104,6 +104,41 @@ app.get('/api/users', handleAsync(async (req, res, next) => {
   // ... do something with the err argument and other arguments expressed passed to the `error callback`.
   next(err);  // or res.status(500).send(err);
 }));
+```
+#### With ReactJS
+`async error handler` can also be used with arrow function in ReactJS. Since `ES6` has not yet supported arrow function for declaring method in a class,
+ you might have to make use of babel plugin called `babel-plugin-transform-class-properties` or any other tools that can transpile the arrow function.
+```javascript
+import React, { Component } from 'react';
+import handleAsync from 'async-error-handler';
+import axios from 'axios';
+
+class User extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {userDetails: null, error: null};
+    }
+  
+  handleClick = handleAsync(async () => {
+      const axiosResponse = await axios.get('/api/profile');
+      this.setState({ userDetails: axiosResponse.data });
+    },(err) => {
+      // Do what you want with the error
+      this.setState({ error: err });
+    });
+  
+  render(){
+      const { userDetails, error } = this.state;
+  
+      return !error ? (
+        <div>
+          <h2>Async Error Handler with ReactJS Demo</h2>
+          {userDetails ? <p>{`Welcome ${userDetails.name}, you are ${userDetails.age} years old`}</p> : null}
+          <button onClick={this.handleClick}>Show my Details</button>
+        </div>
+      ) : <div>{error.message}</div>;
+    }
+}
 ```
 ### Note:
 - This handler should be used with functions that use async and await.
