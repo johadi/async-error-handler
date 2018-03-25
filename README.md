@@ -1,4 +1,4 @@
-## Async Error Handler [![Build Status](https://travis-ci.org/johadi10/async-error-hanlder.svg?branch=master)](https://travis-ci.org/johadi10/async-error-hanlder) [![Coverage Status](https://coveralls.io/repos/github/johadi10/async-error-hanlder/badge.svg?branch=master)](https://coveralls.io/github/johadi10/async-error-hanlder?branch=master)
+## Async Error Handler [![Build Status](https://travis-ci.org/johadi10/async-error-handler.svg?branch=master)](https://travis-ci.org/johadi10/async-error-handler) [![Coverage Status](https://coveralls.io/repos/github/johadi10/async-error-handler/badge.svg?branch=master)](https://coveralls.io/github/johadi10/async-error-handler?branch=master)
 
 
 Simple function for handling errors when working with async and await. Instead of wrapping
